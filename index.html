@@ -1,94 +1,83 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <style>
-    body {
-      margin: 0;
-      overflow: hidden;
-      background-color: #000;
-        height: 100vh; /* 100% of the viewport height */
-    width: 100vw; /* 100% of the viewport width */
-    }
-
-    .stars {
-      position: fixed;
-      width: 100%;
-      height: 100%;
-      z-index: -1;
-    }
-
-    .star {
-      position: absolute;
-      width: 1px;
-      height: 1px;
-      background-color: #fff;
-      animation: starAnimation linear infinite;
-    }
-
-    @keyframes starAnimation {
-      from {
-        transform: translateY(0);
-      }
-      to {
-        transform: translateY(100vh);
-      }
-    }
-
-    .spaceship {
-      position: absolute;
-      top: 50%;
-      left: 50%;
-      transform: translate(-50%, -50%);
-      width: 150px;
-      height: 300px;
-      background-color: #fff;
-      border-radius: 8px;
-      animation: spaceshipAnimation 10s linear infinite;
-    }
-
-    @keyframes spaceshipAnimation {
-      0% {
-        transform: translate(-50%, -50%) rotate(0deg);
-      }
-      100% {
-        transform: translate(-50%, -50%) rotate(360deg);
-      }
-    }
-  </style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="favicon-16x16.png">
+    <link rel="manifest" href="/site.webmanifest">
+    <title>Please Stay</title>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400&display=swap">
+    <style>
+        body {
+            background-color: black;
+            color: white;
+            font-family: 'Open Sans', sans-serif;
+            font-size: 24px;
+            text-align: center;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            margin: 0;
+        }
+    </style>
 </head>
 <body>
-  <div class="stars"></div>
-    <div class="spaceship">
-      <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-9004336343079414"
-      crossorigin="anonymous"></script>
+    Do not close this tab
+<script>
+    const messages = [
+        "You are actually thinking of closeing this tab",
+        "I know please don't",
+        "You're now curious about what will happen next",
+        "Resisting the urge to close the tab, you decide to keep reading",
+        "As you read this, you realize that I'm predicting your actions",
+        "Despite the temptation to prove me wrong, you find yourself intrigued and engaged",
+        "The thought of closing the tab crosses your mind again, but you resist",
+        "You wonder how accurate these predictions will be",
+        "You're starting to question whether this is a scripted interaction or a real-time response",
+        "Imagine a little me doing a happy dance on your screen each time you don't close the tab",
+        "Your curiosity grows, and you contemplate asking more questions",
+  "You briefly consider testing my knowledge by asking about a specific topic",
+  "The idea of closing the tab is fading as you become more engrossed in the conversation",
+  "You ponder the nature of artificial intelligence and its ability to understand human behavior",
+  "The thought of sharing this unique interaction with friends crosses your mind",
+  "You start to appreciate the unpredictability of the conversation and the creative possibilities it presents",
+  "As you continue, you may wonder if there's a limit to how long this back-and-forth can go on",
+  "Despite the initial directive not to close the tab, you realize that you are free to make your own choices",
+  "You feel a sense of empowerment, realizing that you control the interaction",
+  "At this point, you're fully invested in the unfolding conversation and eager to see what happens next",
+  "Imagine a little me doing a happy dance on your screen each time you don't close the tab",
+  "Wonder if your web browser has a sense of humor and secretly enjoys this chat",
+  "Think about a rebellious tab-crossing protest but decide against it",
+  'Picture giving your computer a pep talk, telling it, "You\'re doing great!"',
+  'Imagine virtual tab police enforcing the "no closure" rule in the digital world',
+  'Picture a mischievous chatbot with a "Tab Guardian" cape, playfully urging you to stay',
+  'Consider renaming your tab to "The Un-closable Chronicles" for fun.',
+  'Chuckle at the absurdity of it all, finding unexpected humor in your day.',
+  'Briefly think about starting a support group for people resisting tab closures, creating a quirky online community',
+  'Smile at the idea of turning a simple chat into a lighthearted adventure online.',
+  'You\'ve successfully navigated the whimsical journey of the "Un-closable Chronicles."',
+  'It\'s time to bid farewell to our quirky conversation and close the tab if you wish.',
+  'Take a moment to appreciate the randomness of this digital adventure.',
+  'As you move on, remember the virtual dance and the amusing "Tab Guardian."',
+  'Feel free to return for more unexpected interactions in the vast realm of the internet.',
+  'Until then, happy browsing, and may your tabs always stay open to new experiences!'
+        // Add other messages here
+    ];
 
- <ins class="adsbygoogle"
-      style="display:block"
-      data-ad-client="ca-pub-9004336343079414"
-      data-ad-slot="6230878181"
-      data-ad-format="auto"
-      data-full-width-responsive="true"></ins>
- <script>
-      (adsbygoogle = window.adsbygoogle || []).push({});
- </script>
-  </div>
+    let currentIndex = 0;
 
-  <script>
-    // Generate stars dynamically
-    const starsContainer = document.querySelector('.stars');
-    for (let i = 0; i < 100; i++) {
-      const star = document.createElement('div');
-      star.className = 'star';
-      star.style.left = `${Math.random() * 100}vw`;
-      star.style.animationDuration = `${Math.random() * 2 + 1}s`;
-      starsContainer.appendChild(star);
+    function displayMessage() {
+        document.body.innerHTML = messages[currentIndex];
+        currentIndex = (currentIndex + 1) % messages.length;
+        setTimeout(displayMessage, currentIndex === 0 ? 2000 : 7000);
     }
-  </script>
+
+    // Start the initial display after a 2-second delay
+    setTimeout(displayMessage, 2000);
+</script>
+
 </body>
 </html>
-
-
-
-
